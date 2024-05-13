@@ -78,6 +78,38 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>io.sentry</groupId>
+                <artifactId>sentry-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <!-- for showing output of sentry-cli -->
+                    <debugSentryCli>true</debugSentryCli>
+
+                    <org>dad-7r</org>
+
+                    <project>foodmotion-account-service</project>
+
+                    <!-- in case you're self hosting, provide the URL here -->
+                    <!--<url>http://localhost:8000/</url>-->
+
+                    <!-- provide your auth token via SENTRY_AUTH_TOKEN environment variable -->
+                    <authToken>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</authToken>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!--
+                            Generates a JVM (Java, Kotlin, etc.) source bundle and uploads your source code to Sentry.
+                            This enables source context, allowing you to see your source
+                            code as part of your stack traces in Sentry.
+                            -->
+                            <goal>uploadSourceBundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
