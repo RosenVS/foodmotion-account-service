@@ -1,9 +1,7 @@
 package com.individual.accountservice.RabbitMQ.publisher;
 
-import com.individual.accountservice.Entity.UserPreferences;
 import com.individual.accountservice.dto.DietGoalRequest;
 import com.individual.accountservice.dto.DietRestrictionsRequest;
-import com.individual.accountservice.dto.HandleAccountRequest;
 import com.individual.accountservice.dto.PersonalDataReqeust;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

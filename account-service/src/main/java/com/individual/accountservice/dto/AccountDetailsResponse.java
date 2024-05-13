@@ -1,6 +1,8 @@
 package com.individual.accountservice.dto;
 
-import com.individual.accountservice.Entity.*;
+import com.individual.accountservice.Entity.DietGoal;
+import com.individual.accountservice.Entity.UserPersonalData;
+import com.individual.accountservice.Entity.UserSpecifications;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

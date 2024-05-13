@@ -1,20 +1,15 @@
 package com.individual.accountservice.RabbitMQ.consumer;
 
 
-import com.google.firebase.auth.FirebaseAuthException;
-import com.individual.accountservice.Entity.*;
-import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
+import com.individual.accountservice.Entity.*;
 import com.individual.accountservice.dto.DietGoalRequest;
 import com.individual.accountservice.dto.DietRestrictionsRequest;
-import com.individual.accountservice.dto.HandleAccountRequest;
 import com.individual.accountservice.dto.PersonalDataReqeust;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.boot.info.BuildProperties;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ExecutionException;

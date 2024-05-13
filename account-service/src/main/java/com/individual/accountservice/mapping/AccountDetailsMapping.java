@@ -2,9 +2,6 @@ package com.individual.accountservice.mapping;
 
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.individual.accountservice.Entity.*;
-import com.individual.accountservice.dto.AccountDetailsResponse;
-import com.individual.accountservice.dto.DietGoalRequest;
-import org.springframework.web.bind.annotation.Mapping;
 
 import java.util.Map;
 

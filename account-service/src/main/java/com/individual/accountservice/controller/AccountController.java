@@ -1,8 +1,5 @@
 package com.individual.accountservice.controller;
 
-import com.individual.accountservice.Entity.DietGoal;
-import com.individual.accountservice.Entity.UserPersonalData;
-import com.individual.accountservice.Entity.UserSpecifications;
 import com.individual.accountservice.RabbitMQ.publisher.RabbitMQJsonProducer;
 import com.individual.accountservice.dto.*;
 import com.individual.accountservice.service.AccountService;

@@ -6,13 +6,10 @@ import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.firebase.cloud.FirestoreClient;
 import com.individual.accountservice.Entity.*;
-import com.individual.accountservice.dto.AccountDetailsResponse;
 import com.individual.accountservice.dto.UserPersonalDataResponse;
 import com.individual.accountservice.mapping.AccountDetailsMapping;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.individual.accountservice.mapping.AccountDetailsMapping;
-import java.util.Map;
+
 import java.util.concurrent.ExecutionException;
 
 @Service
