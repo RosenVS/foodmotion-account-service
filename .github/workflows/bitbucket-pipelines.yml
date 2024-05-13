@@ -9,7 +9,7 @@ env:
   APP_NAME: foodmotion-account-service # TODO: update Artifact Registry location
   SER_NAME: foodmotion-account-service # TODO: update Artifact Registry location
   REGION: europe-west1 # TODO: update Cloud Run service region
-  SER_PORT: 8082 # TODO: update Cloud Run service region
+  SER_PORT: 8080 # TODO: update Cloud Run service region
 
 jobs:
   deploy:
@@ -23,33 +23,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-      # NOTE: Alternative option - authentication via credentials json
-      # - name: Google Auth
-      #   id: auth
-      #   uses: 'google-github-actions/auth@v0'
-      #   with:
-      #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}''
-
-      # BEGIN - Docker auth and build (NOTE: If you already have a container image, these Docker steps can be omitted)
-
-      # - name: Build Image, Push to Registry, Deploy to Cloud Run
-      #   run: |
-      #     export IMAGE_NAME=europe-west1-docker.pkg.dev/${{env.PROJECT_ID}}/${{env.APP_NAME}}/${{env.SER_NAME}}:$GITHUB_SHA
-      #     echo "${KEY_FILE}" > client-secret.json
-      #     gcloud auth activate-service-account ${{env.PROJECT_ID}}@appspot.gserviceaccount.com --key-file ${{env.PROJECT_ID}}-3f48ad93aa23.json
-      #     gcloud config set project ${{env.PROJECT_ID}}
-      #     gcloud auth configure-docker europe-west1-docker.pkg.dev
-      #     export DOCKER_BUILDKIT=0
-          
-      #     cd food-products-service
-      #     docker build -t $IMAGE_NAME .
-      #     docker push $IMAGE_NAME
-      #     gcloud run deploy ${{env.SER_NAME}} --image $IMAGE_NAME --port ${{env.SER_PORT}} --region ${{env.REGION}} --cpu=2  --memory=8Gi --timeout=3000 --allow-unauthenticated || true
 
       - name: Build Image, Push to Registry, Deploy to Cloud Run
         run: |
@@ -65,4 +38,3 @@ jobs:
           gcloud run deploy ${{env.SER_NAME}} --image $IMAGE_NAME --port ${{env.SER_PORT}} --region ${{env.REGION}} --cpu=1 --memory=1Gi --timeout=3000 --allow-unauthenticated || true
         env:
           KEY_FILE: ${{ secrets.KEY_FILE }}
-    
