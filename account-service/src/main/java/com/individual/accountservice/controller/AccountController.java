@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://foodmotion-frontend-hlfxsphkja-ew.a.run.app","https://foodmotion-api-gateway-6xxrfy77.ew.gateway.dev"})
 @RequestMapping(value = "/api/account")
 public class AccountController {
     @Autowired
