@@ -12,4 +12,5 @@ import java.io.Serializable;
 @Builder
 public class UserDietGoal implements Serializable {
     private DietGoal dietGoal;
+    private int dailyCalories;
 }

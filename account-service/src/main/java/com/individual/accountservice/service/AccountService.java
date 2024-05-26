@@ -39,6 +39,7 @@ public class AccountService {
         ActivityLevel activityLevel = accountDetailsMapping.extractActivityLevel(personalDataDocument);
         UserSpecifications userSpecifications = accountDetailsMapping.extractUserSpecifications(dietRestrictionsDocument);
         DietGoal dietGoal = accountDetailsMapping.extractDietGoal(dietGoalDocument);
+        int dailyCalories = accountDetailsMapping.extractCalorieIntake(dietGoalDocument);
 
         return UserPersonalDataResponse.builder()
                 .personalData(personalData)
@@ -46,6 +47,7 @@ public class AccountService {
                 .activityLevel(activityLevel)
                 .userSpecifications(userSpecifications)
                 .dietGoal(dietGoal)
+                .calorieIntake(dailyCalories)
                 .build();
     }
 

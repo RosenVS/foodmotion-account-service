@@ -16,4 +16,5 @@ public class UserPersonalDataResponse {
     private UserWeightHeight userWeightHeight;
     private ActivityLevel activityLevel;
     private DietGoal dietGoal;
+    private int calorieIntake;
 }

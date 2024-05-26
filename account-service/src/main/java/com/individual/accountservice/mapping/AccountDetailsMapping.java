@@ -34,6 +34,18 @@ public class AccountDetailsMapping {
         return DietGoal.valueOf(dietGoal);
     }
 
+    public int extractCalorieIntake(DocumentSnapshot document) {
+        Object dailyCaloriesObj = document.get("dailyCalories");
+
+        if (dailyCaloriesObj instanceof Long) {
+            return ((Long) dailyCaloriesObj).intValue();
+        } else if (dailyCaloriesObj instanceof Integer) {
+            return (Integer) dailyCaloriesObj;
+        } else {
+            return 0; // or throw an exception, depending on your use case
+        }
+    }
+
 
 
     public UserWeightHeight extractUserWeightHeight(DocumentSnapshot document) {
